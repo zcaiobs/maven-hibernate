@@ -21,6 +21,13 @@ public class CityApplicationTest {
 
     @Test
     @DisplayName("Verify persistence method.")
+    void findAllPersonTest() {
+        List<Person> persons = cp.findAll();
+        persons.forEach(System.out::println);
+    }
+
+    @Test
+    @DisplayName("Verify persistence method.")
     void savePersonTest() {
         Customer c = new Customer("Caio", new Date(), "caio@email.com");
         Employee e = new Employee("Flash", new Date(), "Hero");

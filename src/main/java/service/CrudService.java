@@ -1,7 +1,6 @@
 package service;
 
 import repository.PersistenceRepository;
-
 import java.util.List;
 
 public class CrudService<T> {
