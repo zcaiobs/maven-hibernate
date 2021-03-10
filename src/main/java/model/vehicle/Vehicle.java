@@ -1,4 +1,4 @@
-package model;
+package model.vehicle;
 
 import javax.persistence.*;
 
@@ -25,6 +25,10 @@ public abstract class Vehicle {
 
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getModel() {

@@ -1,7 +1,5 @@
 package repository;
 
-import model.Car;
-
 import java.util.List;
 
 public interface PersistenceRepository<T>{

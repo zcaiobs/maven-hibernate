@@ -1,17 +1,39 @@
-import model.Bike;
-import model.Car;
-import model.Vehicle;
+import model.person.Customer;
+import model.person.Employee;
+import model.person.Person;
+import model.vehicle.Bike;
+import model.vehicle.Car;
+import model.vehicle.Vehicle;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import repository.PersonPersistence;
 import repository.VehiclePersistence;
 import service.CrudService;
 
+import java.util.Date;
 import java.util.List;
 
 public class CityApplicationTest {
 
     CrudService<Vehicle> cs = new CrudService<>(new VehiclePersistence());
+    CrudService<Person> cp = new CrudService<>(new PersonPersistence());
+
+    @Test
+    @DisplayName("Verify persistence method.")
+    void savePersonTest() {
+        Customer c = new Customer("Caio", new Date(), "caio@email.com");
+        Employee e = new Employee("Flash", new Date(), "Hero");
+        cp.save(e);
+        cp.close();
+    }
+
+    @Test
+    @DisplayName("Verify érsistence method.")
+    void findPersonTest() {
+        Employee e = (Employee) cp.findById(2);
+        System.out.println(e.toString());
+    }
 
     @Test
     @DisplayName("Verify persistence method.")

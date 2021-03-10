@@ -1,4 +1,4 @@
-package model;
+package model.vehicle;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Entity
 @DiscriminatorValue("Bike")
-public class Bike extends Vehicle{
+public class Bike extends Vehicle {
 
     private String brand;
 
@@ -32,7 +32,7 @@ public class Bike extends Vehicle{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Bike bike = (Bike) o;
-        return Objects.equals(super.id, bike.id);
+        return Objects.equals(super.id, bike.getId());
     }
 
     @Override

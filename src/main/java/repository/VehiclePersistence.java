@@ -1,6 +1,6 @@
 package repository;
 
-import model.Vehicle;
+import model.vehicle.Vehicle;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
