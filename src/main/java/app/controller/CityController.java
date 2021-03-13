@@ -13,10 +13,8 @@ import app.service.CrudService;
 @Controller
 public class CityController {
 
-    
     CrudService<Person> cp = new CrudService<>(new PersonPersistence());
     CrudService<Vehicle> cv = new CrudService<>(new VehiclePersistence());
-    
 
     @RequestMapping("/")
     public String index() {
