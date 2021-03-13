@@ -8,6 +8,6 @@ public class CityApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(CityApplication.class, args); 
-        System.out.println("App Started.");
+        System.out.println("App Started : )");
     }
 }
