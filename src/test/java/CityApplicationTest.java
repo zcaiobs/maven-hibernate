@@ -1,23 +1,27 @@
-import model.person.Customer;
-import model.person.Employee;
-import model.person.Person;
-import model.vehicle.Bike;
-import model.vehicle.Car;
-import model.vehicle.Vehicle;
+import java.util.Date;
+import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import repository.PersonPersistence;
-import repository.VehiclePersistence;
-import service.CrudService;
-
-import java.util.Date;
-import java.util.List;
+import app.model.person.Employee;
+import app.model.person.Person;
+import app.model.vehicle.Bike;
+import app.model.vehicle.Car;
+import app.model.vehicle.Vehicle;
+import app.repository.PersonPersistence;
+import app.repository.VehiclePersistence;
+import app.service.CrudService;
 
 public class CityApplicationTest {
 
     CrudService<Vehicle> cs = new CrudService<>(new VehiclePersistence());
     CrudService<Person> cp = new CrudService<>(new PersonPersistence());
+
+    @Test
+    @DisplayName("Verify collection.")
+    void teste() {
+
+    }
 
     @Test
     @DisplayName("Verify persistence method.")
@@ -29,7 +33,7 @@ public class CityApplicationTest {
     @Test
     @DisplayName("Verify persistence method.")
     void savePersonTest() {
-        Customer c = new Customer("Caio", new Date(), "caio@email.com");
+        //Customer c = new Customer("Caio", new Date(), "caio@email.com");
         Employee e = new Employee("Flash", new Date(), "Hero");
         cp.save(e);
         cp.close();
@@ -46,7 +50,7 @@ public class CityApplicationTest {
     @DisplayName("Verify persistence method.")
     void saveTest() {
         Car c = new Car("X1","Black",85000.00,"Flex-fuel");
-        Bike b = new Bike("", "White", 40000.00, "Yamaha");
+       // Bike b = new Bike("", "White", 40000.00, "Yamaha");
         cs.save(c);
         cs.close();
     }

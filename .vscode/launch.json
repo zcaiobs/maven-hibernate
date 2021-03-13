@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CityApplication<myapp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "CityApplication",
+            "projectName": "myapp",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-CityApplication<myapp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "app.CityApplication",
+            "projectName": "myapp",
+            "args": ""
+        }
+    ]
+}
