@@ -1,11 +1,13 @@
 package app.controller;
 
 import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import app.model.person.Person;
 import app.model.vehicle.Vehicle;
+import app.repository.PersistenceRepository;
 import app.repository.PersonPersistence;
 import app.repository.VehiclePersistence;
 import app.service.CrudService;
@@ -13,7 +15,7 @@ import app.service.CrudService;
 @Controller
 public class CityController {
 
-    CrudService<Person> cp = new CrudService<>(new PersonPersistence());
+    PersistenceRepository<Person> cp = new PersonPersistence();
     CrudService<Vehicle> cv = new CrudService<>(new VehiclePersistence());
 
     @RequestMapping("/")

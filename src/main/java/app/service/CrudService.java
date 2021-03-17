@@ -29,9 +29,7 @@ public class CrudService<T> {
         persistenceRepository.update(t);
     }
 
-    public void close() { persistenceRepository.close(); }
-
-    public void remove(T t) {
-        persistenceRepository.remove(t);
+    public boolean remove(T t) {
+        return persistenceRepository.remove(t);
     }
 }

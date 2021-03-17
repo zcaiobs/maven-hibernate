@@ -12,8 +12,7 @@ import app.model.person.Person;
 @Qualifier
 public class PersonPersistence implements PersistenceRepository<Person>{
 
-    private final EntityManagerFactory entityManagerFactory = Persistence
-            .createEntityManagerFactory("City-PU");
+    private final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("City-PU");
     private final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
     @Override
@@ -41,15 +40,21 @@ public class PersonPersistence implements PersistenceRepository<Person>{
     }
 
     @Override
-    public void close() {
-        entityManager.close();
-        entityManagerFactory.close();
+    public boolean remove(Person person) {
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.remove(person);
+            entityManager.getTransaction().commit();
+            return true;
+        } catch (Exception err) {
+            err.printStackTrace();
+        }
+        return false;
     }
 
     @Override
-    public void remove(Person person) {
-        entityManager.getTransaction().begin();
-        entityManager.remove(person);
-        entityManager.getTransaction().commit();
+    public void close() {
+        entityManager.close();
+        entityManagerFactory.close();
     }
 }

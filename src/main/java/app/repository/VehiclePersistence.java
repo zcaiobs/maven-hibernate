@@ -4,7 +4,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import app.model.vehicle.Vehicle;
@@ -13,8 +12,7 @@ import app.model.vehicle.Vehicle;
 @Primary
 public class VehiclePersistence implements PersistenceRepository<Vehicle> {
 
-    private final EntityManagerFactory entityManagerFactory = Persistence
-            .createEntityManagerFactory("City-PU");
+    private final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("City-PU");
     private final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
     @Override
@@ -42,15 +40,24 @@ public class VehiclePersistence implements PersistenceRepository<Vehicle> {
     }
 
     @Override
-    public void close(){
+    public void close() {
         entityManager.close();
         entityManagerFactory.close();
     }
 
     @Override
-    public void remove(Vehicle v) {
-        entityManager.getTransaction().begin();
-        entityManager.remove(v);
-        entityManager.getTransaction().commit();
+    public boolean remove(Vehicle v) {
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.remove(v);
+            entityManager.getTransaction().commit();
+            return true;
+        } catch (Exception err) {
+            err.printStackTrace();
+            return false;
+        } finally {
+            close();
+        }
+
     }
 }

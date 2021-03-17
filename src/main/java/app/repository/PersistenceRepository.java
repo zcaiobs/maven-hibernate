@@ -11,5 +11,5 @@ public interface PersistenceRepository<T>{
     void save(T t);
     void update(T t);
     void close();
-    void remove(T t);
+    boolean remove(T t);
 }
