@@ -86,7 +86,7 @@ public class CityApplicationTest {
     void stringBuilderRest() {
         StringBuilder sb = new StringBuilder();
         sb.append("Hello");
-        sb.append(" World");
+        sb.append(" World kk");
         System.out.println(sb);
     }
 
