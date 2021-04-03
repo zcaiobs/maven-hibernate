@@ -16,7 +16,7 @@
           </tr>
           <tr th:each="dado : ${persons}">
             <td th:text="${dado.name}">dado</td>
-            <td th:text="${dado.birthDate}">dado</td>
+            <td th:text="${#dates.format(dado.birthDate, 'dd-MM-yyyy')}">dado</td>
           </tr>
         </table>
         <br/>
@@ -30,6 +30,15 @@
             <td th:text="${dado.price}">dado</td>
           </tr>
         </table>
+        <br>
+        <div class="local-data">
+          <p>São Paulo,</p>
+          &nbsp<p th:text="${#dates.day(myData)}"></p>
+          &nbsp<p>de</p>
+          &nbsp<p th:text="${#dates.monthName(myData)}"></p>
+          &nbsp<p>de</p>
+          &nbsp<p th:text="${#dates.year(myData)}"></p>
+        </div>
       </div>
     </div>
   </body>

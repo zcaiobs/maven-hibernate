@@ -1,12 +1,14 @@
 package app.repository;
 
-import java.util.List;
+
+import app.model.person.Person;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-import app.model.person.Person;
+import java.util.List;
 
 @Component
 @Qualifier

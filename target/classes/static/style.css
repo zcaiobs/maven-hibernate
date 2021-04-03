@@ -56,3 +56,9 @@
 .service table {
     width: 500px;
 }
+
+.local-data {
+    display: flex;
+    flex-direction: row;
+    color: black;
+}

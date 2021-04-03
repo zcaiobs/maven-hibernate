@@ -1,7 +1,7 @@
 package app.controller;
 
+import java.util.Date;
 import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +27,7 @@ public class CityController {
     public String service(ModelMap model) {
         List<Person> persons = cp.findAll();
         model.addAttribute("persons", persons);
+        model.addAttribute("myData", new Date());
         List<Vehicle> vehicles = cv.findAll();
         model.addAttribute("vehicles", vehicles);
         return "service";

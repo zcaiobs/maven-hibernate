@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import app.thread.MyThread;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -23,6 +22,12 @@ public class CityApplicationTest {
 
     CrudService<Vehicle> cs = new CrudService<>(new VehiclePersistence());
     CrudService<Person> cp = new CrudService<>(new PersonPersistence());
+
+    @Test
+    @DisplayName("Enum Test")
+    void enumTest() {
+        System.out.println("Hello World");
+    }
 
     @Test
     @DisplayName("Running MyThread Test")
@@ -82,6 +87,7 @@ public class CityApplicationTest {
         StringBuilder sb = new StringBuilder();
         sb.append("Hello World");
         sb.append(" Ok");
+        sb.replace(6,11,"Caio");
         System.out.println(sb);
     }
 
@@ -125,7 +131,7 @@ public class CityApplicationTest {
     @Test
     @DisplayName("Verify persistence method.")
     void saveTest() {
-        Car c = new Car("X1", "Black", 85000.00, "Flex-fuel");
+        Car c = new Car("Gol", "Red", 30000.00, "Gasoline");
         // Bike b = new Bike("", "White", 40000.00, "Yamaha");
         cs.save(c);
     }
