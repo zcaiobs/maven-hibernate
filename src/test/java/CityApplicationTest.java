@@ -87,7 +87,7 @@ public class CityApplicationTest {
         StringBuilder sb = new StringBuilder();
         sb.append("Hello");
         sb.append(" Ok");
-        sb.replace(6,11,"Caio");
+        sb.replace(6,11,"World");
         System.out.println(sb);
     }
 
