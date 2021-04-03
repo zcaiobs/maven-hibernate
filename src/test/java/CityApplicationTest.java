@@ -80,7 +80,7 @@ public class CityApplicationTest {
     @DisplayName("Test StringBuilder")
     void stringBuilderRest() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Hello World");
+        sb.append("Hello");
         sb.append(" Ok");
         System.out.println(sb);
     }
